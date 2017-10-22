@@ -1,0 +1,4 @@
+services:
+#    airsoft_core.example:
+#        class: Airsoft\CoreBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

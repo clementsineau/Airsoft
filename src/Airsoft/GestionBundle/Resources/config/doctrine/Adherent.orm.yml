@@ -1,0 +1,31 @@
+Airsoft\GestionBundle\Entity\Adherent:
+    type: entity
+    table: null
+    repositoryClass: Airsoft\GestionBundle\Entity\AdherentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dateLicence:
+            type: datetime
+
+    manyToOne:
+        membre:
+            targetEntity: Membre
+            inversedBy: listAdherents
+            joinColumn:
+                name: membre_id
+                referencedColumnName: id
+            onDelete: CASCADE
+        club:
+            targetEntity: Club
+            inversedBy: listAdherents
+            joinColumn:
+                name: club_id
+                referencedColumnName: id
+            onDelete: CASCADE
+    lifecycleCallbacks: {  }
+

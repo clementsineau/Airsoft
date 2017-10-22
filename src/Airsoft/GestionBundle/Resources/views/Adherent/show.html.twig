@@ -1,0 +1,30 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Adherent</h1>
+    <div class="well">
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Date licence</th><th>   </th>
+                <td> {{ entity.dateLicence|date('Y-m-d ') }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+        <ul class="record_actions">
+
+            <a href="{{ path('adherent') }}" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>
+                Retour à la liste
+            </a>
+
+            <a href="{{ path('adherent_edit', { 'id': entity.id }) }}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i>
+                Modifier Adherent
+            </a>
+    {{ form(delete_form) }}
+</ul>
+{% endblock %}

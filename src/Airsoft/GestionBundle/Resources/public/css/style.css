@@ -1,0 +1,18 @@
+#opac {
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    left: 100px;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.modal {
+    position: absolute;
+    z-index: 11;
+    top: 250px;
+    width: 400px;
+    height: 300px;
+}

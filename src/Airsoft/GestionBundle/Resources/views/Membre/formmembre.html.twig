@@ -1,0 +1,150 @@
+<h3>Formulaire d'annonce</h3>
+
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.sexe, "Civilité : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.sexe) }}
+        <div class="col-sm-3">
+            {{ form_widget(form.sexe, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {# Génération du label. #}
+        {{ form_label(form.nomMembre, "Nom du membre : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.nomMembre) }}
+
+        <div class="col-sm-5">
+            {# Génération de l'input. #}
+            {{ form_widget(form.nomMembre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    {# Idem pour un autre champ. #}
+    <div class="form-group">
+        {{ form_label(form.prenomMembre, "Prénom : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.prenomMembre) }}
+        <div class="col-sm-5">
+            {{ form_widget(form.prenomMembre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.adresseMembre, "Adresse : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.adresseMembre) }}
+        <div class="col-sm-8">
+            {{ form_widget(form.adresseMembre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.villeMembre, "Ville : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.villeMembre) }}
+        <div class="col-sm-6">
+            {{ form_widget(form.villeMembre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.cpMembre, "Code postal : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.cpMembre) }}
+        <div class="col-sm-2">
+            {{ form_widget(form.cpMembre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.emailMembre, "Email : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.emailMembre) }}
+        <div class="col-sm-5">
+            {{ form_widget(form.emailMembre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.telMembre, "Téléphone : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.telMembre) }}
+        <div class="col-sm-3">
+            {{ form_widget(form.telMembre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    {#<div class="form-group">#}
+        {#{{ form_label(form.clubs, "Membres : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}#}
+        {#{{ form_errors(form.clubs) }}#}
+        {#<div class="col-sm-4" align="center">#}
+            {#{{ form_widget(form.clubs, {'attr': {'class': 'form-control'}})}}#}
+        {#</div>#}
+    {#</div>#}
+
+    <div class="form-group">
+        {{ form_label(form.tresorier, "Trésorier dans : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.tresorier) }}
+        <div class="col-sm-4" align="center">
+            {{ form_widget(form.tresorier, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.president, "Président dans : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.president) }}
+        <div class="col-sm-4" align="center">
+            {{ form_widget(form.president, {'attr': {'class': 'form-control'}})}}
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        {{ form_label(form.adherents, "Adhérent dans : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            <div class="col-sm-8 control-label" >
+                {{ form_errors(form.adherents) }}
+                {{ form_widget(form.adherents) }}
+            </div>
+    </div>
+
+    {#<div class="form-group">#}
+        {#<div class="col-sm-8" >#}
+    {#{{ form_row(form.adherents) }}#}
+            {#</div>#}
+        {#</div>#}
+        {#&#123;&#35;{% for entity in form.clubs %}&#35;&#125;#}
+            {#&#123;&#35;<div class="col-sm-5" >&#35;&#125;#}
+                {#&#123;&#35;<label><INPUT type="checkbox" id="tres" name="tres" value="1"/> <span>trésorier</span></label>&#35;&#125;#}
+                {#&#123;&#35;<label><INPUT type="checkbox" id="pres" name="pres" value="2"/> <span>président</span></label>&#35;&#125;#}
+                {#&#123;&#35;<label><INPUT type="checkbox" id="adhe" name="adhe" value="3"/> <span>adhérent</span></label>&#35;&#125;#}
+            {#&#123;&#35;</div>&#35;&#125;#}
+        {#&#123;&#35;{% endfor %}&#35;&#125;#}
+
+    {#</div>#}
+    {# Génération du label + error + widget pour un champ #}
+    {#{{ form_row(form.clubs) }}#}
+    {#{{ form_row(form.published) }}#}
+
+    {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+    {#{{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}#}
+
+    {# Génération automatique des champs pas encore écrits. #}
+    {#Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)#}
+    {#et tous les champs cachés (type « hidden »). &#35;&#125;#}
+    {#{{ form_rest(form , {'attr': {'class': 'btn btn-primary'}}) }}#}
+    {{ form_widget(form.dateMembre, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_errors(form.dateMembre, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_widget(form.published, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_errors(form.published, { 'attr' : { 'style':'display:none'} }) }}
+    {#{{ form_widget(form.clubs, { 'attr' : { 'style':'display:none'} }) }}#}
+    {#{{ form_errors(form.clubs, { 'attr' : { 'style':'display:none'} }) }}#}
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+
+</div>
+
+{# On charge la bibliothèque jQuery. Ici, je la prends depuis le CDN google
+   mais si vous l'avez en local, changez simplement l'adresse. #}
+
+{# Voici le script en question : #}

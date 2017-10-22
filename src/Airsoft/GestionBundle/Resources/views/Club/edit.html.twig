@@ -1,0 +1,14 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+{% block body -%}
+    <h1>Modification Club</h1>
+{#{{ form(form) }}#}
+    <div class="well">
+            {{ include("AirsoftGestionBundle:Club:editform.html.twig") }}
+            <ul class="record_actions">
+                <a href="{{ path('club') }}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i>
+                    Retour à l'accueil
+                </a>
+
+            </ul>
+        </div>
+{% endblock %}

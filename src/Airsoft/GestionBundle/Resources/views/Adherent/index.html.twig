@@ -1,0 +1,30 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Adherents{% endblock %}
+
+{% block body -%}
+    <h1>liste des Adhérents </h1>
+
+    <div class="well">
+        <ul>
+            {% for entity in entities %}
+                <li><td><a href="{{ path('adherent_show', {'id': entity.id}) }}">{{ entity.id }}</a></td>
+
+                        {% if entity.dateLicence %}{{ entity.dateLicence|date('d-m-Y ') }}{% endif %}
+
+                    {#ajouté le {{ entity.dateClub|date('d/m/Y') }} modifié le  {{ entity.updatedAt|date('d/m/Y') }}#}
+                </li>
+            {% else %}
+                <li>Pas (encore !) de club</li>
+            {% endfor %}
+        </ul>
+    </div>
+        <ul>
+
+            <a href="{{ path('adherent_new') }}">
+                Créer adhérent
+            </a>
+
+
+    </ul>
+    {% endblock %}

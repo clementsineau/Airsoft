@@ -1,0 +1,74 @@
+Airsoft\GestionBundle\Entity\Club:
+    type: entity
+    table: null
+    repositoryClass: Airsoft\GestionBundle\Entity\ClubRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomClub:
+            type: string
+            length: 255
+        adresseClub:
+            type: string
+            length: 255
+        villeClub:
+            type: string
+            length: 255
+        cpClub:
+            type: integer
+        emailClub:
+            type: string
+            length: 255
+        telClub:
+            type: string
+            length: 15
+        dateClub:
+            type: datetime
+        published:
+            type: boolean
+        updatedAt:
+            type: datetime
+            nullable: TRUE
+#        image:
+#            type: string
+#            length: 255
+    manyToMany:
+        membres:
+            targetEntity: Membre
+            mappedBy: clubs
+            cascade: ['persist', 'remove']
+            orphanRemoval: 'true'
+    oneToMany:
+        listAdherents:
+            targetEntity: Adherent
+            mappedBy: club
+            cascade: ['persist', 'remove']
+            orphanRemoval: 'true'
+    oneToOne:
+        president:
+            targetEntity: President
+            mappedBy: club
+            joinColumn:
+                name: president_id
+                referencedColumnName: id
+            onDelete: CASCADE
+        tresorier:
+            targetEntity: Tresorier
+            mappedBy: club
+            joinColumn:
+                name: tresorier_id
+                referencedColumnName: id
+            onDelete: CASCADE
+        image:
+            targetEntity: Image
+            mappedBy: club
+            joinColumn:
+                name: image_id
+                referencedColumnName: id
+            cascade: ['persist', 'remove']
+            onDelete: CASCADE
+    lifecycleCallbacks: {  }

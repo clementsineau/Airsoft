@@ -1,0 +1,30 @@
+president:
+    path:     /
+    defaults: { _controller: "AirsoftGestionBundle:President:index" }
+
+president_show:
+    path:     /{id}/show
+    defaults: { _controller: "AirsoftGestionBundle:President:show" }
+
+president_new:
+    path:     /new
+    defaults: { _controller: "AirsoftGestionBundle:President:new" }
+
+president_create:
+    path:     /create
+    defaults: { _controller: "AirsoftGestionBundle:President:create" }
+    methods:  POST
+
+president_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AirsoftGestionBundle:President:edit" }
+
+president_update:
+    path:     /{id}/update
+    defaults: { _controller: "AirsoftGestionBundle:President:update" }
+    methods:  [POST, PUT]
+
+president_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AirsoftGestionBundle:President:delete" }
+    methods:  [POST, DELETE]

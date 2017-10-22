@@ -1,0 +1,9 @@
+<ul class="nav nav-pills nav-stacked">
+    {% for club in listClubs %}
+        <li>
+            <a href="{{ path('club_show', {'id':club.id}) }}">
+                {{club.nomClub }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

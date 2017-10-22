@@ -1,0 +1,72 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+
+{% block body -%}<hr>
+        {# On affiche tous les messages flash dont le nom est « info » #}
+        <p style="color: red; background-color: #ffff42">{% for message in app.session.flashbag.get('notice') %}Message flash : {{ message }}{% endfor %}</p>
+    <h1>{{ entity.nomMembre }}</h1>
+    <i>Ajouté, le {{entity.dateMembre|date('d/m/Y ')}} à {{ entity.dateMembre|date('H:i:s')}}</i>
+    {#<pre>#}
+{#{{ dump(entity) }}#}
+{#</pre>#}
+<div class="well">
+    <table class="record_properties">
+        <tbody>
+
+            <tr>
+                <th>Nom membre : </th>
+                <td>{{ entity.sexe }} {{ entity.nomMembre }}</td>
+            </tr>
+            <tr>
+                <th>Prénom : </th>
+                <td>{{ entity.prenomMembre }}</td>
+            </tr>
+            <tr>
+                <th>Adresse : </th>
+                <td>{{ entity.adresseMembre }}</td>
+            </tr>
+            <tr>
+                <th>Ville : </th>
+                <td>{{ entity.villeMembre }}</td>
+            </tr>
+            <tr>
+                <th>Code postal : </th>
+                <td>{{ entity.cpMembre }}</td>
+            </tr>
+            <tr>
+                <th>Email : </th>
+                <td>{{ entity.emailMembre }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone : </th>
+                <td>{{ entity.telMembre }}</td>
+            </tr>
+            <tr>
+                <th>Licensié dans  : </th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>A le role de   : </th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Modifier le  : </th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+       <a href="{{ path('membre') }}" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+       </a>
+
+       <a href="{{ path('membre_edit', { 'id': entity.id }) }}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i>
+            Modifier Membre
+       </a>
+         {#<a href="{form('club_delete', { 'id': entity.id }) }}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i>#}
+        {#Supprimer Club#}
+        {#</a>#}
+
+    {{ form(delete_form) }}
+</ul>
+
+{% endblock %}

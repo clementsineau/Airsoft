@@ -1,0 +1,28 @@
+Airsoft\GestionBundle\Entity\Tresorier:
+    type: entity
+    table: null
+    repositoryClass: Airsoft\GestionBundle\Entity\TresorierRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToOne:
+        membre:
+            targetEntity: Membre
+            inversedBy: tresorier
+            joinColumn:
+                name: membre_id
+                referencedColumnName: id
+            onDelete: CASCADE
+            cascade: ['persist', 'remove']
+#    manyToOne:
+        club:
+            targetEntity: Club
+            inversedBy: tresorier
+            joinColumn:
+                name: club_id
+                referencedColumnName: id
+#            onDelete: CASCADE
+    lifecycleCallbacks: {  }

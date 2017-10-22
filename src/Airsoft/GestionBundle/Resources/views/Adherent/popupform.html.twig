@@ -1,0 +1,31 @@
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+
+    <div class="form-group" align="center">
+    {{ form_label(form.dateLicence, "Date licence : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+    {{ form_errors(form.dateLicence) }}
+        <div class="col-sm-4" >
+            {{ form_widget(form.dateLicence, {'attr': {'class': 'form-control'}})}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.clubs, "Licencié dans : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.clubs) }}
+        <div class="col-sm-3" >
+            {{ form_widget(form.clubs, {'attr': {'class': 'form-control'}})}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.membre , "Liste des membres : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.membre) }}
+        <div class="col-sm-3" >
+            {{ form_widget(form.membre, {'attr': {'class': 'form-control'}})}}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>
+{#{{ form(form) }} #}

@@ -1,0 +1,7 @@
+airsoft_core:
+    resource: "@AirsoftCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+airsoft_gestion:
+    resource: "@AirsoftGestionBundle/Resources/config/routing.yml"
+    prefix:   /

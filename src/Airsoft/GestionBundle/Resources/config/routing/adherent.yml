@@ -1,0 +1,30 @@
+adherent:
+    path:     /
+    defaults: { _controller: "AirsoftGestionBundle:Adherent:index" }
+
+adherent_show:
+    path:     /{id}/show
+    defaults: { _controller: "AirsoftGestionBundle:Adherent:show" }
+
+adherent_new:
+    path:     /new
+    defaults: { _controller: "AirsoftGestionBundle:Adherent:new" }
+
+adherent_create:
+    path:     /create
+    defaults: { _controller: "AirsoftGestionBundle:Adherent:create" }
+    methods:  POST
+
+adherent_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AirsoftGestionBundle:Adherent:edit" }
+
+adherent_update:
+    path:     /{id}/update
+    defaults: { _controller: "AirsoftGestionBundle:Adherent:update" }
+    methods:  [POST, PUT]
+
+adherent_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AirsoftGestionBundle:Adherent:delete" }
+    methods:  [POST, DELETE]

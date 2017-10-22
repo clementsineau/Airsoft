@@ -1,0 +1,18 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Adherent edit</h1>
+
+    {#{{ form(edit_form) }}#}
+    {{ include("AirsoftGestionBundle:Adherent:form.html.twig") }}
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('adherent') }}">
+                    Back to the list
+                </a>
+            </li>
+
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+{% endblock %}

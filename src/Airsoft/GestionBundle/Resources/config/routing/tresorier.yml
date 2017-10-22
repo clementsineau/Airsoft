@@ -1,0 +1,30 @@
+tresorier:
+    path:     /
+    defaults: { _controller: "AirsoftGestionBundle:Tresorier:index" }
+
+tresorier_show:
+    path:     /{id}/show
+    defaults: { _controller: "AirsoftGestionBundle:Tresorier:show" }
+
+tresorier_new:
+    path:     /new
+    defaults: { _controller: "AirsoftGestionBundle:Tresorier:new" }
+
+tresorier_create:
+    path:     /create
+    defaults: { _controller: "AirsoftGestionBundle:Tresorier:create" }
+    methods:  POST
+
+tresorier_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AirsoftGestionBundle:Tresorier:edit" }
+
+tresorier_update:
+    path:     /{id}/update
+    defaults: { _controller: "AirsoftGestionBundle:Tresorier:update" }
+    methods:  [POST, PUT]
+
+tresorier_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AirsoftGestionBundle:Tresorier:delete" }
+    methods:  [POST, DELETE]

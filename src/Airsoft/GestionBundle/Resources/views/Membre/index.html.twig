@@ -1,0 +1,26 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Membres{% endblock %}
+
+{% block airsoftmembre_body %}<hr>
+    <h3>Liste des membres</h3>
+    <div class="well">
+        <ul>
+            {% for entity in membres %}
+                <li><a href="{{ path('membre_show', {'id': entity.id}) }}">
+                        {{ entity.nomMembre }}
+                    </a>
+                    ajouté le {{ entity.dateMembre|date('d/m/Y') }}
+                    à {{ entity.dateMembre|date('H:i:s') }}
+                    {#dans {% for entity in clubs %}#}
+                        {#<a href="{{ path('club_show', {'id': entity.id}) }}"> {{ entity.nomClub }} </a>#}
+                         {#{% endfor %}#}
+                    {#et a pour rôle#}
+            {% else %}
+                <li>Pas (encore !) de membres</li>
+            {% endfor %}
+
+
+        </ul>
+    </div>
+{% endblock %}

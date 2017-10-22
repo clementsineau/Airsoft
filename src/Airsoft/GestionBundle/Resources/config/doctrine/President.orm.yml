@@ -1,0 +1,29 @@
+Airsoft\GestionBundle\Entity\President:
+    type: entity
+    table: null
+    repositoryClass: Airsoft\GestionBundle\Entity\PresidentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToOne:
+        membre:
+            targetEntity: Membre
+            inversedBy: president
+            joinColumn:
+                name: membre_id
+                referencedColumnName: id
+            onDelete: CASCADE
+            cascade: ['persist', 'remove']
+#    manyToOne:
+        club:
+            targetEntity: Club
+            inversedBy: president
+            joinColumn:
+                name: club_id
+                referencedColumnName: id
+            onDelete: CASCADE
+            cascade: ['persist', 'remove']
+    lifecycleCallbacks: {  }

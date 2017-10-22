@@ -1,0 +1,32 @@
+club:
+    path:     /{page}
+    defaults: { _controller: "AirsoftGestionBundle:Club:index", page: 1 }
+    requirements:
+        page: \d*
+
+club_show:
+    path:     /{id}/show
+    defaults: { _controller: "AirsoftGestionBundle:Club:show" }
+
+club_new:
+    path:     /new
+    defaults: { _controller: "AirsoftGestionBundle:Club:new" }
+
+club_create:
+    path:     /create
+    defaults: { _controller: "AirsoftGestionBundle:Club:create" }
+    methods:  POST
+
+club_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AirsoftGestionBundle:Club:edit" }
+
+club_update:
+    path:     /{id}/update
+    defaults: { _controller: "AirsoftGestionBundle:Club:update" }
+    methods:  [POST, PUT]
+
+club_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AirsoftGestionBundle:Club:delete" }
+    methods:  [POST, DELETE]

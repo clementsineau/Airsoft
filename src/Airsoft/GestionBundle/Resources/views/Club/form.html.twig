@@ -1,0 +1,87 @@
+<h3>Formulaire d'annonce</h3>
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
+    <div class="form-group">
+        {# Génération du label. #}
+        {{ form_label(form.nomClub, "Nom du Club : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.nomClub) }}
+        <div class="col-sm-5">
+            {# Génération de l'input. #}
+            {{ form_widget(form.nomClub, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    {# Idem pour un autre champ. #}
+    {#<div class="form-group">#}
+        {#{{ form_label(form.image.file, "File : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}#}
+        {#{{ form_errors(form.image.file) }}#}
+        {#<div class="col-sm-5">#}
+            {#{{ form_widget(form.image.file, {'attr': {'class': 'form-control'}}) }}#}
+        {#</div>#}
+    {#</div>#}
+    {#<div class="form-group">#}
+        {#{{ form_label(form.image.alt, "alt : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}#}
+        {#{{ form_errors(form.image.alt) }}#}
+        {#<div class="col-sm-3">#}
+            {#{{ form_widget(form.image.alt, {'attr': {'class': 'form-control'}}) }}#}
+        {#</div>#}
+    {#</div>#}
+    <div class="form-group">
+        {{ form_label(form.adresseClub, "Adresse du club : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.adresseClub) }}
+        <div class="col-sm-8">
+            {{ form_widget(form.adresseClub, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.villeClub, "Ville du club : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.villeClub) }}
+        <div class="col-sm-4">
+            {{ form_widget(form.villeClub, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.cpClub, "Code postal du club : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.cpClub) }}
+        <div class="col-sm-2">
+            {{ form_widget(form.cpClub, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.emailClub, "Email du club : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.emailClub) }}
+        <div class="col-sm-5">
+            {{ form_widget(form.emailClub, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {{ form_label(form.telClub, "Téléphone du club : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.telClub) }}
+        <div class="col-sm-3">
+            {{ form_widget(form.telClub, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    {# Génération du label + error + widget pour un champ #}
+    {#{{ form_row(form.dateClub) }}#}
+    {#{{ form_row(form.published) }}#}
+    {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+    {#{{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}#}
+    {# Génération automatique des champs pas encore écrits.
+       Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+       et tous les champs cachés (type « hidden »). #}
+    {{ form_widget(form.membres, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_errors(form.membres, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_widget(form.dateClub, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_errors(form.dateClub, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_widget(form.updatedAt, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_errors(form.updatedAt, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_widget(form.published, { 'attr' : { 'style':'display:none'} }) }}
+    {{ form_errors(form.published, { 'attr' : { 'style':'display:none'} }) }}
+    {#{{ form_rest(form , {'attr': {'class': 'btn btn-primary'}}) }}#}
+    {# Fermeture de la balise <form> du formulaire HTML #}
+    {{ form_end(form) }}
+<p>Attention : ce club sera ajouté directement sur la page liste Clubs après validation du formulaire. </p>
+</div>
+

@@ -1,0 +1,30 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Clubs{% endblock %}
+
+{% block airsoftclub_body %}<hr>
+<h3>Liste des clubs</h3>
+    {# On affiche tous les messages flash dont le nom est « info » #}
+    <p style="color: red; background-color: #ffff42">{% for message in app.session.flashbag.get('delete') %}Message flash : {{ message }}{% endfor %}</p>
+<div class="well">
+    <ul>
+        {% for entity in listClubs %}
+            <li><a href="{{ path('club_show', {'id': entity.id}) }}">
+                    {{ entity.nomClub }}
+                </a>
+                ajouté le {{ entity.dateClub|date('d/m/Y') }} modifié le  {{ entity.updatedAt|date('d/m/Y') }}
+            </li>
+        {% else %}
+            <li>Pas (encore !) de club</li>
+        {% endfor %}
+    </ul>
+</div>
+    <ul class="pagination">
+        {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+        {% for p in range(1, nbPages) %}
+            <li{% if p == page %} class="active"{% endif %}>
+                <a href="{{ path('club', {'page': p}) }}">{{ p }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

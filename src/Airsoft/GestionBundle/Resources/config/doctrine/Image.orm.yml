@@ -1,0 +1,27 @@
+Airsoft\GestionBundle\Entity\Image:
+    type: entity
+    table: null
+    repositoryClass: Airsoft\GestionBundle\Entity\ImageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        url:
+            type: string
+            length: 255
+        alt:
+            type: string
+            length: 255
+    oneToOne:
+        club:
+            targetEntity: Club
+            inversedBy: image
+            joinColumn:
+                name: club_id
+                referencedColumnName: id
+#            onDelete: CASCADE
+#            cascade: ['persist', 'remove']
+    lifecycleCallbacks: {  }

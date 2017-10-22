@@ -1,0 +1,61 @@
+Airsoft\GestionBundle\Entity\Membre:
+    type: entity
+    table: null
+    repositoryClass: Airsoft\GestionBundle\Entity\MembreRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        sexe:
+            type: string
+            lenght: 20
+        nomMembre:
+            type: string
+            length: 255
+        prenomMembre:
+            type: string
+            length: 255
+        adresseMembre:
+            type: string
+            length: 255
+        villeMembre:
+            type: string
+            length: 255
+        cpMembre:
+            type: integer
+        emailMembre:
+            type: string
+            length: 255
+        telMembre:
+            type: string
+            length: '10'
+        dateMembre:
+            type: datetime
+    manyToMany:
+        clubs:
+            targetEntity: Club
+            inversedBy: membre
+            cascade: ['persist', 'remove']
+            orphanRemoval: 'true'
+    oneToMany:
+        listAdherents:
+            targetEntity: Adherent
+            mappedBy: membre
+            cascade: ['persist', 'remove']
+            orphanRemoval: 'true'
+    oneToOne:
+        tresorier:
+            targetEntity: Tresorier
+            mappedBy: membre
+            cascade: ['persist', 'remove']
+            orphanRemoval: 'true'
+        president:
+            targetEntity: President
+            mappedBy: membre
+            cascade: ['persist', 'remove']
+            orphanRemoval: 'true'
+    lifecycleCallbacks: {  }
+

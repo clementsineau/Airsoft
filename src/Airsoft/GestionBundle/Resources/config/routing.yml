@@ -1,0 +1,23 @@
+airsoft_gestion_adherent:
+    resource: "@AirsoftGestionBundle/Resources/config/routing/adherent.yml"
+    prefix:   /adherent
+
+airsoft_gestion_president:
+    resource: "@AirsoftGestionBundle/Resources/config/routing/president.yml"
+    prefix:   /president
+
+airsoft_gestion_tresorier:
+    resource: "@AirsoftGestionBundle/Resources/config/routing/tresorier.yml"
+    prefix:   /tresorier
+
+airsoft_gestion_membre:
+    resource: "@AirsoftGestionBundle/Resources/config/routing/membre.yml"
+    prefix:   /membre
+
+airsoft_gestion_club:
+    resource: "@AirsoftGestionBundle/Resources/config/routing/club.yml"
+    prefix:   /club
+
+airsoft_gestion_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AirsoftGestionBundle:Default:index }

@@ -1,0 +1,74 @@
+{% extends 'AirsoftGestionBundle::layout.html.twig' %}
+
+{% block title %}
+    Affichage d'un club
+{% endblock %}
+
+{% block body %}<hr>
+    {# On affiche tous les messages flash dont le nom est « info » #}
+    <p style="color: red; background-color: #ffff42">{% for message in app.session.flashbag.get('notice') %}Message flash : {{ message }}{% endfor %}</p>
+<h1>nom du club {{ entity.nomClub }}</h1>
+{##}
+<i>Ajouté, le {{entity.dateClub|date('d/m/Y ')}} Modifié, le  {{ entity.updatedAt|date('d/m/Y')}}</i>
+    <div class="well">
+    <table class="record_properties">
+        <tbody >
+            <tr>
+                <th>Nom : </th>
+                <td>{{ entity.nomClub }}</td>
+            </tr>
+            <tr>
+                <th>Adress : </th>
+                <td>{{ entity.adresseClub }}</td>
+            </tr>
+            <tr>
+                <th>Ville : </th>
+                <td>{{ entity.villeClub }}</td>
+            </tr>
+            <tr>
+                <th>Code postal : </th>
+                <td>{{ entity.cpClub }}</td>
+            </tr>
+            <tr>
+                <th >Email : </th>
+                <td >{{ entity.emailClub }}</td>
+            </tr>
+            <tr>
+                <th>Téléphone : </th>
+                <td>{{ entity.telClub }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+        <a href="{{ path('club') }}" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+        </a>
+        <a href="{{ path('club_edit', { 'id': entity.id }) }}" class="btn btn-default"><i class="glyphicon glyphicon-edit"></i>
+            Modifier Club
+        </a>
+
+        <a href="{{ path('adherent_new', { 'id': entity.id }) }}" class="btn btn-default">
+            Ajouter adhérent<i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+        <a href="{{ path('tresorier_new', { 'id': entity.id }) }}" class="btn btn-default">
+            Ajouter trésorier<i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+        <a href="{{ path('president_new', { 'id': entity.id }) }}" class="btn btn-default">
+            Ajouter président<i class="glyphicon glyphicon-chevron-right"></i>
+        </a><br><br>
+
+    <div class="well">
+        {% for membre in membres %}
+            {#<li><a href="{{ path('membre_show'}}">{{ membre.nomMembre }}</a> </li>#}
+            <li><a href=" {{ path('membre_show', {'id': membre.id}) }} ">{{ membre.nomMembre }}
+                    {#{{ membre.id }}#}
+                </a>{{ membre.prenomMembre }} de  <b>{{ membre.villeMembre }}</b> <i>ajouté, le {{membre.dateMembre|date('d/m/Y ')}}  {#à {{ membre.dateMembre|date('H:i:s')}}#}</i></li>
+        {% else %}
+            <li>Pas (encore !) de membres dans ce club</li>
+        {% endfor %}
+
+    </div>
+    {{ form(delete_form) }}
+
+{% endblock %}

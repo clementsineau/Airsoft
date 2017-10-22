@@ -1,2 +1,4 @@
-# Airsoft
-gestion de club et membre avec entité doctrine et ORM
+Airsoft
+=======
+
+A Symfony project created on December 18, 2015, 10:47 am.

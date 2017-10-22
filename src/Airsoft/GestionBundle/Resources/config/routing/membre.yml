@@ -1,0 +1,30 @@
+membre:
+    path:     /
+    defaults: { _controller: "AirsoftGestionBundle:Membre:index" }
+
+membre_show:
+    path:     /{id}/show
+    defaults: { _controller: "AirsoftGestionBundle:Membre:show" }
+
+membre_new:
+    path:     /new
+    defaults: { _controller: "AirsoftGestionBundle:Membre:new" }
+
+membre_create:
+    path:     /create
+    defaults: { _controller: "AirsoftGestionBundle:Membre:create" }
+    methods:  POST
+
+membre_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AirsoftGestionBundle:Membre:edit" }
+
+membre_update:
+    path:     /{id}/update
+    defaults: { _controller: "AirsoftGestionBundle:Membre:update" }
+    methods:  [POST, PUT]
+
+membre_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AirsoftGestionBundle:Membre:delete" }
+    methods:  [POST, DELETE]
